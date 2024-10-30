@@ -37,7 +37,6 @@
 \usepackage{fancybox}
 \usepackage{fix-cm}
 \usepackage{float}
-\usepackage{fullpage}
 \usepackage{graphicx}
 \usepackage[xetex,colorlinks]{hyperref}
 \usepackage{import}
@@ -66,16 +65,14 @@
 
 %%% Information about the class %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\semester}[1]{\newcommand{\sem}{#1}}
-\newcommand{\stafflist}[1]{\newcommand{\staff}{#1}}
-\newcommand{\wsfeedback}[1]{\newcommand{\wsfdbk}{#1}}
+\newcommand{\creator}[1]{\newcommand{\createdby}{Created by #1. }}
+\newcommand{\sourcecode}[1]{\newcommand{\worksheetsource}{Worksheet source code: \href{#1}{#1}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% MODIFY THIS INFORMATION AS NECESSARY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \semester{Fall 2024}
-\stafflist{Created by Jim Fang,
-Bryan Adolfo Ventura Benitez.
-}
-\wsfeedback{Worksheet feedback: \href{https://links.jimfang.dev/feedback}{links.jimfang.dev/feedback}}
+\creator{陈刑}
+\sourcecode{https://github.com/dev-chenxing/note}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% Margins and definitions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -116,11 +113,11 @@ Bryan Adolfo Ventura Benitez.
 
 \pagestyle{headandfoot}
 \firstpagefootrule
-\firstpagefooter{\small \staff \wsfdbk \newline Provided by CSM 61A contributors under \href{https://github.com/csmberkeley/csm-61a/blob/main/LICENSE}{CC BY 4.0/3-clause BSD}.}{}{}
+\firstpagefooter{\small \createdby \newline \worksheetsource}{}{}
 \runningfootrule
 \runningfooter{
   \let\titlebreak\relax
-  \sc \oddeven{Week \discnum: \disctitle}{\thepage}}{}{\sc \oddeven{\thepage}{CSM 61A \sem}
+  \sc \oddeven{Week }{\thepage}}{}{\sc \oddeven{\thepage}{CSM 61A \sem}
   }
 
 \let\oldmaketitle\maketitle
@@ -129,10 +126,12 @@ Bryan Adolfo Ventura Benitez.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% Configuring the section and subsection titles %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\titleformat{\section}[hang]{\sffamily \bfseries}
-{\fontsize{15}{25} \color{titlecol} \selectfont \thesection}{10pt}
-{\fontfamily{ppl} \fontsize{15}{0} \selectfont \raggedleft}
-[{\titlerule[1.0pt]}]
+\titleformat{\section}
+{}
+{}
+{0pt}
+{}
+[\titlerule]
 
 \titleformat{\subsection}[hang]{\sffamily \bfseries}
 {\thesubsection}{10pt}{}[{\titlerule[0.5pt]}]
