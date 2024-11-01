@@ -16,9 +16,9 @@ def main():
                 md = markdown(f.read())
                 for token in md:
                     if token['type'] == 'paragraph':
-                        for child in token['children']:
-                            if child['type'] == 'strong':
-                                topics.append(child['children'][0]['raw'])
+                        t = token['children'][0]
+                        if t['type'] == 'strong':
+                            topics.append(t['children'][0]['raw'])
     print(random.choice(topics))
 
 
